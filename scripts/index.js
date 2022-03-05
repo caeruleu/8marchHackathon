@@ -1,17 +1,42 @@
+let tasks = [];
+let tasksList = document.getElementById('tasksList');
+
 document.addEventListener('DOMContentLoaded', function() {
-    
+    JSON.parse(localStorage.getItem("savedTasks"));
     //console.log()
-    //showTasks();
+    showTasks();
 })
 
-let tasks = [];
+tasksList.addEventListener('change', function(e) {
+    let taskId = e.target.getAttribute('id');
+    let valueLabel = tasksList.querySelector('[for='+ taskId +']').innerHTML;
+    
+    tasks.forEach(function(task) {
+        if (task.todo === valueLabel) {
+            task.done = !task.done;
+            localStorage.setItem("savedTasks", JSON.stringify(tasks));
+        }
+    });
+});
 
 if (localStorage.getItem("savedTasks")) {
     tasks = JSON.parse(localStorage.getItem("savedTasks"));
 }
 
 let addTask = () => {
-    let task = document.getElementById("newTask").value;
+    let task = {
+        todo: document.getElementById("newTask").value,
+        done: false
+    };
     tasks.push(task);
     localStorage.setItem("savedTasks", JSON.stringify(tasks));
+    showTasks()
+}
+
+let showTasks = () => {
+    let tasksFromLocal = '';
+    tasks.forEach(function(task, i) {
+        tasksFromLocal += `<div><input type='checkbox' id='item_${i}' ${task.done? 'checked' : ''}><label for='item_${i}'>${task.todo}</label></div>`;
+    });
+    document.getElementById("tasksInProcess").innerHTML = tasksFromLocal;
 }
