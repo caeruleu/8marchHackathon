@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
-    <link rel="shortcut icon" href="/8marchHackathon/assets/images/calendar.png" type="image/png"/>
+    <link rel="shortcut icon" href="/8marchHackathon/assets/images/calendar.png" type="image/png" />
 </head>
+
 <body>
     <header>
         <div class="navigation">
             <form action="search" method="get">
                 <input name="s" placeholder="Введите запрос..." type="search">
                 <button type="submit">Поиск</button>
-              </form>
+            </form>
         </div>
     </header>
     <main>
         <div class="main-title">
             <h1>Ваши задачи</h1>
             <div class="addnew">
-                <input type="button" value="Добавить задачу">
+                <input type="text" id="newTask">
+                <input type="button" onclick="addTask()" value="Добавить задачу">
             </div>
         </div>
         <div class="tasks">
@@ -38,22 +40,17 @@
             </fieldset>
             <h3>Завершенные задачи:</h3>
             <fieldset>
-                <input type="checkbox" checked="cheked" id="task5" name="task5">
+                <input type="checkbox" id="task5" name="task5">
                 <label for="task5">Приготовить покушать</label> <br>
-                <input type="checkbox" checked="cheked" id="task6" name="task6">
+                <input type="checkbox" id="task6" name="task6">
                 <label for="task6">Накормить коня</label> <br>
-                <input type="checkbox" checked="cheked" id="task7" name="task7">
+                <input type="checkbox" id="task7" name="task7">
                 <label for="task7">Причесать коня</label> <br>
             </fieldset>
         </div>
-        <div class="aside">
-            <h3>Мои заметки</h3>
-            <div class="notes">
-                <input type="button" value="Добавить заметку">
-            </div>
-            <textarea rows="10" cols="50" placeholder="Введите текст..." ></textarea>
-        </div>
     </main>
+
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
