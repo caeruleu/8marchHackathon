@@ -12,14 +12,14 @@
 
 <body>
     <header>
-        <button id="toggle" onclick="myFunction()">темная тема</button>
+        <button class='btn' id="toggle" onclick="myFunction()">темная тема</button>
     </header>
     <main>
         <h1>Ваши задачи</h1>
         <div class="main-title">
             <div class="addnew">
                 <input type="text" id="newTask">
-                <input type="button" onclick="addTask()" value="Добавить задачу" class="button1">
+                <input class='btn' type="button" onclick="addTask()" value="Добавить задачу" class="button1">
             </div>
         </div>
         <h3>Текущие задачи:</h3>
@@ -27,7 +27,7 @@
             <fieldset id="tasksInProcess">
 
             </fieldset>
-            <button onclick="deleteTasks()">Удалить задачи</button>
+            <button class='btn' onclick="deleteTasks()">Удалить задачи</button>
         </div>
     </main>
 
