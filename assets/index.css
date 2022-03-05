@@ -9,11 +9,18 @@ body {
 }
 .main-title{
     display: flex;
-    background-color: rgb(57, 129, 63);
     width: 80%;
+    border: 2px solid white;
 }
 h1{
     color: aliceblue;
+}
+.addnew{
+    display: flex;
+}
+.button1{
+    height: 20px;
+    align-self: center;
 }
 #newTask{
     display: flex;
@@ -21,7 +28,7 @@ h1{
 }
 .tasks{
     display: flex;
-    background-color: rgb(57, 129, 63);
+    border: 2px solid white;
     width: 80%;
     height: 50px;
 }
