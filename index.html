@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
-    <link rel="shortcut icon" href="/8marchHackathon/assets/images/calendar.png" type="image/png"/>
+    <link rel="shortcut icon" href="/8marchHackathon/assets/images/calendar.png" type="image/png" />
 </head>
+
 <body>
     <header>
         <div class="navigation">
             <form action="search" method="get">
                 <input name="s" placeholder="Введите запрос..." type="search">
                 <button type="submit">Поиск</button>
-              </form>
+            </form>
         </div>
     </header>
     <main>
         <div class="main-title">
             <h1>Ваши задачи</h1>
             <div class="addnew">
-                <input type="button" value="Добавить задачу">
+                <input type="text" id="newTask">
+                <input type="button" onclick="addTask()" value="Добавить задачу">
             </div>
         </div>
         <div class="tasks">
@@ -47,6 +49,8 @@
             </fieldset>
         </div>
     </main>
+
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
